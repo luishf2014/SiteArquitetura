@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Usuário</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        window.onload = function() {
+            const inscricoes = JSON.parse(localStorage.getItem("inscricoes")) || [];
+            const listaCursos = document.getElementById("lista-cursos");
+
+            if (inscricoes.length === 0) {
+                listaCursos.innerHTML = "<p>Nenhum curso inscrito.</p>";
+            } else {
+                inscricoes.forEach(inscricao => {
+                    const li = document.createElement("li");
+                    li.textContent = `${inscricao.nome} se inscreveu no curso de ${inscricao.curso}.`;
+                    listaCursos.appendChild(li);
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Área do Usuário</h1>
+    </header>
+
+    <main>
+        <h2>Cursos Inscritos</h2>
+        <ul id="lista-cursos"></ul>
+        <a href="index.html" class="btn">Voltar para a Home</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Curso de Programação Online. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

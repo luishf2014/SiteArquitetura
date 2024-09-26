@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CursoStyle.css">
+    <script>
+        window.onload = function () {
+            const params = new URLSearchParams(window.location.search);
+            const curso = params.get('curso');
+
+            const detalhes = {
+                javascript: {
+                    titulo: "Curso de JavaScript",
+                    descricao: "Aprenda a programar com JavaScript, uma das linguagens mais populares do mundo\n\nJavaScript é uma linguagem de programação que movimenta uma web. Seja você um iniciante ou alguém que já tem experiência em programação, aprender JavaScript é essencial para qualquer desenvolvedor. Com este curso, você terá uma introdução específica à linguagem que alimenta a maioria dos sites modernos, permitindo criar interações dinâmicas e responsivas.\n\nVocê aprenderá desde os fundamentos, como variáveis, operadores e estruturas de controle, até os tópicos avançados, como manipulação do DOM, eventos, funções assíncronas e APIs. Com exemplos práticos e projetos do mundo real, você poderá construir aplicações web completas e interativas, como formulários dinâmicos, galerias de imagens, jogos e muito mais.\n\nEste curso é perfeito para quem deseja se destacar no mercado de trabalho, já que o JavaScript é amplamente utilizado por grandes empresas como Google, Facebook e Amazon. Ao final, você terá uma compreensão sólida da linguagem e poderá aplicar seus conhecimentos para criar aplicações escaláveis, interativas e inovadoras.\n\nPrincipais temas abordados:\n\n- Fundamentos da linguagem JavaScript\n- Manipulação de elementos HTML e CSS(DOM)\n- Funções, loops e arrays\n- Programação orientada a eventos\n- JavaScript moderno: ES6 e além\n- Consumo de APIs e integração com back - end\n- Aplicações reais e práticas para o mercado\n\nCom este curso, você estará pronto para enfrentar os desafios do desenvolvimento web moderno e estará preparado para construir aplicações ricas em funcionalidades e interatividade.",
+                    instrutor: "Jalin Rabei",
+                    preco: "R$ 200,00",
+                    imagem: "/Uploads/JavaScript.png"
+                },
+                python: {
+                    titulo: "Curso de Python",
+                    descricao: "Descubra o poder do Python, a melhor linguagem já feita.\n\nPython é amplamente reconhecido como uma das linguagens de programação mais poderosas, versáteis e simples de aprender. Este curso foi projetado tanto para iniciantes quanto para programadores experientes que desejam explorar o vasto potencial dessa linguagem, que é amplamente utilizado em diversas áreas, como desenvolvimento web, automação, ciência de dados, inteligência artificial, entre outras.\n\nAo longo do curso, você será apresentado aos fundamentos do Python, desde sua sintaxe simples e limpa até conceitos avançados que fazem dele uma escolha preferida para grandes empresas como Google, Netflix e NASA. Você aprenderá a escrever códigos eficientes e escaláveis, desenvolvendo aplicações práticas que vão desde scripts automatizados até projetos completos como web crawlers, jogos e muito mais.\n\nPython é conhecido por sua simplicidade, o que facilita o aprendizado, e por sua enorme comunidade de desenvolvedores, que traz bibliotecas e frameworks robustos para praticamente qualquer tarefa. Ao finalizar o curso, você estará preparado para resolver problemas reais do mundo moderno com soluções elegantes e eficazes.\n\nPrincipais temas abordados:\n\n- Fundamentos da linguagem Python\n- Manipulação de dados e automação de tarefas\n- Programação Orientada a Objetos (POO)\n- Estruturas de dados: listas, dicionários e conjuntos\n- Funções e módulos\n- Programação funcional e lambdas\n- Python para web: Flask e Django\n- Ciência de dados e aprendizado de máquina com Python\n- Aplicações práticas e projetos desafiadores\n\nCom o Python, você não apenas aprenderá a programar, mas também abrirá portas para carreiras promissoras em áreas como análise de dados, automação, desenvolvimento de software e inteligência artificial. Este curso fornece a necessidade básica para transformar ideias em soluções tecnológicas, sendo uma habilidade necessária no cenário atual.",
+                    instrutor: "Cezar Oliveira",
+                    preco: "R$ 250,00",
+                    imagem: "/Uploads/Python.jpeg"
+                },
+                "html-css": {
+                    titulo: "Curso de HTML e CSS",
+                    descricao: "Domine o desenvolvimento web com HTML e CSS.\n\nHTML e CSS são as linguagens fundamentais para qualquer pessoa que deseja criar e estruturar páginas web profissionais e específicas. Com este curso, você aprenderá a construir sites do zero, compreendendo como funciona a estrutura de um site, o design de interfaces e o estilo\n\nO curso abrange desde os conceitos básicos, como a criação de elementos HTML e a aplicação de estilos CSS, até tópicos mais avançados, como layouts responsivos, animações e design adaptados a diferentes dispositivos. Ao longo das aulas, você construirá projetos práticos e reais, como landing pages, portfólios e blogs, que servirão como uma excelente base para o desenvolvimento de projetos pessoais ou profissionais.\n\nAprofundaremos o uso de ferramentas modernas como Flexbox e Grid Layout para criar layouts flexíveis e responsivos, além de técnicas para garantir que seu site seja otimizado para SEO e acessível em diferentes navegadores. Este curso é ideal para quem deseja se destacar no desenvolvimento web front-end e iniciar sua jornada como desenvolvedor web.\n\nPrincipais temas abordados:\n\n- Fundamentos do HTML5: estruturação de páginas web\n- Estilos com CSS3: núcleos, fontes e layouts\n- Criação de layouts responsivos com Flexbox e Grid Layout\n- Melhores práticas de design e usabilidade\n- Desenvolvimento mobile-first e design responsivo\n- Animações e transições CSS para interfaces dinâmicas\n- Otimização para SEO e acessibilidade\n- Integração de fontes, ícones e imagens para sites profissionais\n- Projetos práticos: páginas de vendas, portfólios, blogs",
+                    instrutor: "Aquino Rego",
+                    preco: "R$ 150,00",
+                    imagem: "/Uploads/Html-Css.jpeg"
+                }
+            };
+
+            // Usar o curso selecionado para buscar os detalhes
+            if (curso) {
+                const cursoInfo = detalhes[curso.toLowerCase()];
+                if (cursoInfo) {
+                    document.getElementById("curso-titulo").innerText = cursoInfo.titulo;
+                    document.getElementById("curso-descricao").innerText = cursoInfo.descricao;
+                    document.getElementById("curso-instrutor").innerText = `Instrutor: ${cursoInfo.instrutor}`;
+                    document.getElementById("curso-preco").innerText = `Preço: ${cursoInfo.preco}`;
+                    document.getElementById("curso-imagem").src = cursoInfo.imagem;
+                } else {
+                    document.getElementById("curso-titulo").innerText = "Curso não encontrado.";
+                }
+            } else {
+                document.getElementById("curso-titulo").innerText = "Nenhum curso selecionado.";
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Bem-vindo aos Cursos de Programação</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Cursos</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="curso">
+        <h2 id="curso-titulo"></h2>
+        <img id="curso-imagem" src="" alt="Curso">
+        <p id="curso-descricao"></p>
+        <p id="curso-instrutor"></p>
+        <p id="curso-preco"></p>
+        <a href="inscricao.html" class="btn">Inscreva-se Agora</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Curso de Programação Online. Todos os direitos reservados.</p>
+    </footer>
+</body>
+
+</html>

@@ -6,6 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscrição - Curso de Programação</title>
     <link rel="stylesheet" href="InscricaoStyle.css">
+    <script>
+        function armazenarInscricao(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            const nome = document.getElementById("nome");
+            const email = document.getElementById("email");
+            const curso = document.getElementById("curso");
+
+            const inscricoes = JSON.parse(localStorage.getItem("inscricoes")) || [];
+            inscricoes.push({ nome, email, cpf, curso });
+
+            localStorage.setItem("inscricoes", JSON.stringify(inscricoes));
+            alert("Inscrição realizada com sucesso!");
+
+            // Redireciona para a área do usuário
+            window.location.href = "AreaAluno.html";
+        }
+    </script>
 </head>
 
 <body>
@@ -15,15 +33,15 @@
 
     <main>
         <h2>Preencha seus dados</h2>
-        <form id="inscricao-form">
+        <form id="inscricao-form" onsubmit="armazenarInscricao(event)">
             <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
+            <input type="text" id="nome" name="nome">
 
             <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+            <input type="email" id="email" name="email">
 
             <label for="curso">Selecione o Curso:</label>
-            <select id="curso" name="curso" required>
+            <select id="curso" name="curso">
                 <option value="">Selecione...</option>
                 <option value="javascript">JavaScript</option>
                 <option value="python">Python</option>
@@ -32,10 +50,11 @@
 
             <h3>Dados do Cartão de Crédito</h3>
             <label for="numero-cartao">Número do Cartão:</label>
-            <input type="text" id="numero-cartao" name="numero-cartao" required>
+            <input type="text" id="numero-cartao" name="numero-cartao">
 
             <label for="numero-cartao">CPF:</label>
-            <input type="text" id="cpf" name="cpf" placeholder="Apenas Números" oninput="formatarCPF(this)" maxlength="14" required>
+            <input type="text" id="cpf" name="cpf" placeholder="Apenas Números" oninput="formatarCPF(this)"
+                maxlength="14">
             <script>
                 function formatarCPF(campo) {
                     campo.value = campo.value.replace(/\D/g, ''); // Remove tudo que não é dígito
@@ -46,12 +65,12 @@
             </script>
 
             <label for="validade">Validade:</label>
-            <input type="text" id="validade" name="validade" placeholder="MM/AA" required>
+            <input type="text" id="validade" name="validade" placeholder="MM/AA">
 
             <label for="cvv">CVV:</label>
-            <input type="text" id="cvv" name="cvv" required>
+            <input type="text" id="cvv" name="cvv">
 
-            <button type="submit" class="btn">Enviar Inscrição</button>
+            <button type="submit" class="btn"><a href="AreaAluno.html">Enviar Inscrição</a></button>
             <a href="index.html" class="btn voltar">Voltar</a>
         </form>
     </main>
