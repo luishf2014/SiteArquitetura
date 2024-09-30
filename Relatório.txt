@@ -1,0 +1,47 @@
+Relatório Final do Protótipo: Desenvolvimento de Software
+1. Introdução
+Este relatório apresenta a construção de protótipos de alto e baixo nível, realizados como parte do desenvolvimento de uma solução de software. O processo envolveu o entendimento tanto da experiência do usuário quanto das limitações e desafios técnicos. O desenvolvimento contou com a colaboração dos usuários Arthur Dancini (RGM: 40157253), João Gabriel (RGM: 36060313) e Luis Henrique Mota da Fonseca (RGM: 35711868).
+
+2. Protótipos de Baixo e Alto Nível
+Protótipo de Baixo Nível:
+O foco foi em aspectos técnicos do sistema, como estruturação do código, uso de linguagens de programação, comunicação entre os componentes e identificação de possíveis limitações técnicas. Isso envolveu:
+
+Definição de arquitetura de software.
+Identificação de componentes técnicos, como banco de dados, servidores e frameworks.
+Testes de funcionalidades básicas, como cadastros e interações iniciais.
+Protótipo de Alto Nível:
+O objetivo foi a criação de uma interface com o usuário (UI/UX) e a demonstração de funcionalidades principais sem detalhamento técnico. Este protótipo ajudou na validação da experiência de usuário, facilitando a comunicação com os stakeholders e a captura de feedback. Ele incluiu:
+
+Design da interface.
+Fluxo de navegação entre telas.
+Funcionalidades principais, como menus e ações esperadas do usuário.
+
+3. Análise Geral dos Protótipos
+Percepção sobre os Protótipos
+A linguagem de baixo nível foi essencial para a implementação, detalhando as funcionalidades do sistema, mas sua total compreensão só foi possível após o desenvolvimento do protótipo de alto nível, que permitiu visualizar como o usuário final interagiria com o sistema. A combinação dos dois proporcionou uma visão completa, desde os desafios técnicos até a experiência do usuário.
+
+Importância dos Protótipos
+
+O protótipo de alto nível foi fundamental para alinhar expectativas com os stakeholders, validando a interface e identificando problemas de usabilidade.
+O protótipo de baixo nível revelou detalhes técnicos cruciais, permitindo ajustes na estrutura de código e resolução de limitações.
+
+4. Feedback dos Usuários
+Arthur Dancini (RGM: 40157253)
+Inicialmente houve dificuldades em entender o projeto, mas após a finalização dos protótipos, o trabalho foi concluído com maior clareza. Problemas identificados incluem:
+O menu fixo ainda não tem uma função.
+Cursos salvos não estão relacionados ao usuário.
+
+João Gabriel (RGM: 36060313)
+As dificuldades iniciais envolviam a estruturação do projeto e a divisão de tarefas. No entanto, o processo se tornou mais simples e transparente ao longo do tempo. Pequenas mudanças foram feitas entre os protótipos de baixo e alto nível, destacando a importância de ambos.
+
+Luis Henrique Mota da Fonseca (RGM: 35711868)
+Problemas de comunicação no início dificultaram o alinhamento da equipe, mas, uma vez resolvidos, o trabalho avançou de maneira positiva. O protótipo foi útil para visualizar as funcionalidades, porém uma documentação mais detalhada sobre as interações do usuário teria sido benéfica.
+
+5. Considerações Finais
+Ambos os tipos de protótipos foram indispensáveis para o sucesso do projeto. Enquanto o protótipo de alto nível foi essencial para a validação da interface e das interações com os usuários, o de baixo nível garantiu que a solução fosse tecnicamente viável. A comunicação inicial e a documentação podem ser melhoradas em futuros projetos, mas o aprendizado foi significativo e o processo trouxe importantes lições para o desenvolvimento de software.
+
+Equipe:
+
+Arthur Dancini (RGM: 40157253)
+João Gabriel (RGM: 36060313)
+Luis Henrique Mota da Fonseca (RGM: 35711868)
